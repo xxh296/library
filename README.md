@@ -1,4 +1,4 @@
-# The [Library assignment](https://www.theodinproject.com/lessons/node-path-javascript-library) from The Odin Project.
+# The [Library assignment](https://www.theodinproject.com/lessons/node-path-javascript-library) from The Odin Project
 
 ## Requirements:
 * Essentially, create `Book` objects, and store them in an array 
