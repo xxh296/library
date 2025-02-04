@@ -40,6 +40,19 @@
 
 .bottom-container {
     grid-area: bottom-container;
-    display: grid;    
+    /* display: grid;     */
+    height: 100vh;
     background-color: #eee;
+    /* background-color: red;; */
+    padding: 2rem;
+    
+    font-size: 1rem;
+}
+
+.data-table {
+    padding: 1rem;
+    background-color: white;
+    color: #999;
+    border-radius: 0.5rem;
+    /* height: calc(100% - 20vh); */
 }
