@@ -49,26 +49,44 @@ function populate(){
     });
     
     // append myLibrary items to .data-table
+
+    // for (let i = 0; i < myLibrary.length; i++) {
+    //   const dataPieceDiv0 = document.createElement("div");
+    //   dataPieceDiv0.textContent = myLibrary[i].author;
+    //   dataTable.appendChild(dataPieceDiv0);
+
+    //   const dataPieceDiv1 = document.createElement("div");
+    //   dataPieceDiv1.textContent = myLibrary[i].title;
+    //   dataTable.appendChild(dataPieceDiv1);
+
+    //   const dataPieceDiv2 = document.createElement("div");
+    //   dataPieceDiv2.textContent = myLibrary[i].pages;
+    //   dataTable.appendChild(dataPieceDiv2);
+
+    //   const dataPieceDiv3 = document.createElement("div");
+    //   dataPieceDiv3.textContent = myLibrary[i].isRead;
+    //   dataTable.appendChild(dataPieceDiv3);
+
+    //   const dataPieceDiv4 = document.createElement("div");
+    //   dataPieceDiv4.textContent = myLibrary[i].comment;
+    //   dataTable.appendChild(dataPieceDiv4);      
+    // }
+
     for (let i = 0; i < myLibrary.length; i++) {
-      let dataPieceDiv0 = document.createElement("div");
-      dataPieceDiv0.textContent = myLibrary[i].author;
-      dataTable.appendChild(dataPieceDiv0);
-
-      let dataPieceDiv1 = document.createElement("div");
-      dataPieceDiv1.textContent = myLibrary[i].title;
-      dataTable.appendChild(dataPieceDiv1);
-
-      let dataPieceDiv2 = document.createElement("div");
-      dataPieceDiv2.textContent = myLibrary[i].pages;
-      dataTable.appendChild(dataPieceDiv2);
-
-      let dataPieceDiv3 = document.createElement("div");
-      dataPieceDiv3.textContent = myLibrary[i].isRead;
-      dataTable.appendChild(dataPieceDiv3);
-
-      let dataPieceDiv4 = document.createElement("div");
-      dataPieceDiv4.textContent = myLibrary[i].comment;
-      dataTable.appendChild(dataPieceDiv4);      
+      const dataPieces = [
+        myLibrary[i].author,
+        myLibrary[i].title,
+        myLibrary[i].pages,
+        myLibrary[i].isRead,
+        myLibrary[i].comment
+      ];
+    
+      // Loop through the data pieces and create the divs dynamically
+      dataPieces.forEach((dataPiece) => {
+        const dataPieceDiv = document.createElement("div");
+        dataPieceDiv.textContent = dataPiece;
+        dataTable.appendChild(dataPieceDiv);
+      });
     }
   }
 }
