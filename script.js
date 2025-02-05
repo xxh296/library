@@ -14,6 +14,8 @@ addBookButton.addEventListener("click", () => {
   alert("Button clicked!");
 });
 
+// data-form
+
 function Book(author, title, pages, isRead, comment) {
     this.author = author;
     this.title = title;

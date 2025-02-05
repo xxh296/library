@@ -13,6 +13,39 @@
 <body>
     <div class="container">
         <div class="top-container">
+            <div class="data-form">
+                <div>
+                    <img src="./images/close-circle-outline.svg" alt="Close button image - click to close the dialogue that adds a new book.">
+                    </div>
+                <div>
+                    <input type="text" name="author" id="input-author" placeholder="Author">
+                </div>
+                <div>
+                    <input type="text" name="title" id="input-title" placeholder="Book's title">
+                </div>
+                <div>
+                    <input type="number" name="Pages" id="input-pages" placeholder="Number of pages">
+                </div>
+                <div>
+                    <fieldset>
+                        <legend>Have you read this book?</legend>
+                            <div>
+                                <input type="radio" name="yes" value="yes" id="radio-yes">
+                                <label for="yes">Yes</label>
+                            </div>
+                            <div>
+                                <input type="radio" name="no" value="no" id="radio-no">
+                                <label for="no">No</label>
+                            </div>
+                    </fieldset>
+                </div>
+                <div>
+                    <textarea name="Comment (optional)" id="textarea-comment"></textarea>
+                </div>
+                <div>
+                    <button>add</button>
+                </div>
+            </div>
             <!-- <button>add a book</button> -->
         </div>
         <div class="bottom-container">
