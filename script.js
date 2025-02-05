@@ -78,6 +78,7 @@ function populate(){
 
     for (let i = 0; i < myLibrary.length; i++) {
       const dataPieces = [
+        i + 1 + ".",
         myLibrary[i].author,
         myLibrary[i].title,
         myLibrary[i].pages,
