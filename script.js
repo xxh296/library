@@ -1,5 +1,7 @@
 const myLibrary = [];
 const dataTable = document.querySelector(".data-table");
+const dataForm = document.querySelector(".data-form");
+const modalClose = document.querySelector("#modal-close");
 
 // create and add the button
 const topContainer = document.querySelector(".top-container");
@@ -7,11 +9,17 @@ const addBookButton = document.createElement("button");
 addBookButton.innerText = "add a book";
 topContainer.appendChild(addBookButton);
 
+modalClose.addEventListener("click", () => {
+  dataForm.style.display = "none";
+  topContainer.appendChild(addBookButton);
+})
+
 addBookButton.addEventListener("click", () => {
   addBookButton.remove();
+  dataForm.style.display = "grid";
   // TODO: Replace the button with the form
   // when the form is ready 
-  alert("Button clicked!");
+  // alert("Button clicked!");
 });
 
 // data-form

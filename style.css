@@ -80,10 +80,12 @@
     background-color: white;
     color: black;
 
-    display: grid;
+    /* display: grid; */
+    display: none;
     grid-template-rows: repeat(7, 1fr);
 }
 
-.data-form img {
+#modal-close {
     height: 16px;
 }
+
