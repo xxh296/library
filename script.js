@@ -13,22 +13,25 @@ function Book(author, title, pages, isRead, comment) {
 function addBookToLibrary(author, title, pages, isRead, comment) {
   const book = new Book(author, title, pages, isRead, comment);
   myLibrary.push(book);
-  return myLibrary;
+  populate();
+  // return myLibrary;
 }
 
 function removeBookFromLibrary(bookNum){
 
   //DEBUG
-  console.log("myLibrary.lenth === " + myLibrary.length);
+  // console.log("myLibrary.lenth === " + myLibrary.length);
 
     const indexToRemove = myLibrary.findIndex(i => i.bookId === bookNum);
     if (indexToRemove !== -1){
       myLibrary.splice(indexToRemove, 1);
     }
 
+    populate();
+
     //DEBUG
-    console.log(myLibrary);
-    console.log("myLibrary.lenth === " + myLibrary.length);
+    // console.log(myLibrary);
+    // console.log("myLibrary.lenth === " + myLibrary.length);
 
 }
 
@@ -38,6 +41,7 @@ Book.prototype.toggleIsReadStatus = function(){
   } else if (this.isRead){
     this.isRead = false;
   }
+  populate();
 } 
 
 function populate(){
