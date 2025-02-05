@@ -18,31 +18,37 @@
                     <input type="image" src="./images/close-circle-outline.svg" alt="Close button image - click to close the dialogue that adds a new book."  id="modal-close">
                     <!-- <img src="./images/close-circle-outline.svg" alt="Close button image - click to close the dialogue that adds a new book."> -->
                 </div>
-                <div>
-                    <input type="text" name="author" id="input-author" placeholder="Author">
-                </div>
-                <div>
-                    <input type="text" name="title" id="input-title" placeholder="Book's title">
-                </div>
-                <div>
-                    <input type="number" name="pages" id="input-pages" placeholder="Number of pages">
-                </div>
-                <div>
-                    <fieldset>
-                        <legend>Have you read this book?</legend>
-                            <div>
-                                <input type="radio" name="isRead" value="true" id="radio-yes">
-                                <label for="radio-yes">Yes</label>
-                            </div>
-                            <div>
-                                <input type="radio" name="isRead" value="false" id="radio-no">
-                                <label for="radio-no">No</label>
-                            </div>
-                    </fieldset>
-                </div>
-                <div>
-                    <textarea name="Comment (optional)" id="textarea-comment"></textarea>
-                </div>
+
+
+                <form id="data-inputs">
+                    <div>
+                        <input type="text" name="author" id="input-author" placeholder="Author">
+                    </div>
+                    <div>
+                        <input type="text" name="title" id="input-title" placeholder="Book's title">
+                    </div>
+                    <div>
+                        <input type="number" name="pages" id="input-pages" placeholder="Number of pages">
+                    </div>
+                    <div>
+                        <fieldset>
+                            <legend>Have you read this book?</legend>
+                                <div>
+                                    <input type="radio" name="isRead" value="true" id="radio-yes">
+                                    <label for="radio-yes">Yes</label>
+                                </div>
+                                <div>
+                                    <input type="radio" name="isRead" value="false" id="radio-no">
+                                    <label for="radio-no">No</label>
+                                </div>
+                        </fieldset>
+                    </div>
+                    <div>
+                        <textarea name="Comment (optional)" id="textarea-comment"></textarea>
+                    </div>
+                </form>
+
+
                 <div>
                     <button id="addButton">add</button>
                 </div>

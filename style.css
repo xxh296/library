@@ -1,6 +1,6 @@
 * {
     /* DEBUG */
-    /* outline: solid orange; */
+    outline: solid orange;
     /* background-color: #999; */
     /* color: #eee; */
 
@@ -83,7 +83,7 @@
 
     /* display: grid; */
     display: none;
-    grid-template-rows: repeat(7, 1fr);
+    grid-template-rows: 2em 10fr auto;
 }
 
 #modal-close {

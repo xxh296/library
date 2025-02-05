@@ -31,14 +31,10 @@ addButton.addEventListener("click", () => {
   const pages = document.querySelector("#input-pages").value;
   const isRead = document.querySelector("input[name='isRead']:checked")?.value;
   const comment = document.querySelector("#textarea-comment").value;
-  // console.log(author)
-  // console.log(title)
-  // console.log(pages)
-  // console.log(isRead)
-  // console.log(comment)
+  
   addBookToLibrary(author, title, pages, isRead, comment);
-
-
+  
+  document.querySelector("#data-inputs").reset();
 });
 
 
