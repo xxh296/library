@@ -67,13 +67,14 @@
 .table-title {
     /* font-size: 1.25rem; */
     font-weight: 700;
+    color: darkorange;
     /* color: #999; */
 }
 
-.data-table div:not(.table-title) {
-    /* DEBUG*/
-    color: red;
-}
+/* .data-table div:not(.table-title) {  */
+    /* DEBUG */
+    /* color: red; */
+ /* } */
 
 .data-form {
      /* DEBUG */

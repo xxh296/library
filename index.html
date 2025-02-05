@@ -25,18 +25,18 @@
                     <input type="text" name="title" id="input-title" placeholder="Book's title">
                 </div>
                 <div>
-                    <input type="number" name="Pages" id="input-pages" placeholder="Number of pages">
+                    <input type="number" name="pages" id="input-pages" placeholder="Number of pages">
                 </div>
                 <div>
                     <fieldset>
                         <legend>Have you read this book?</legend>
                             <div>
-                                <input type="radio" name="yes" value="yes" id="radio-yes">
-                                <label for="yes">Yes</label>
+                                <input type="radio" name="isRead" value="true" id="radio-yes">
+                                <label for="radio-yes">Yes</label>
                             </div>
                             <div>
-                                <input type="radio" name="no" value="no" id="radio-no">
-                                <label for="no">No</label>
+                                <input type="radio" name="isRead" value="false" id="radio-no">
+                                <label for="radio-no">No</label>
                             </div>
                     </fieldset>
                 </div>
@@ -44,7 +44,7 @@
                     <textarea name="Comment (optional)" id="textarea-comment"></textarea>
                 </div>
                 <div>
-                    <button>add</button>
+                    <button id="addButton">add</button>
                 </div>
             </div>
             <!-- <button>add a book</button> -->
@@ -56,7 +56,7 @@
                 <div class="table-title">Title</div>
                 <div class="table-title">Pages</div>
                 <div class="table-title">Read?</div>
-                <div class="table-title">Comment (optional)</div>
+                <div class="table-title">Comment</div>
             </div>
         </div>
     </div>    

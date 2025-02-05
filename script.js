@@ -1,7 +1,8 @@
 const myLibrary = [];
 const dataTable = document.querySelector(".data-table");
 const dataForm = document.querySelector(".data-form");
-const modalClose = document.querySelector("#modal-close");
+const modalCloseButton = document.querySelector("#modal-close");
+const addButton = document.querySelector("#addButton");
 
 // create and add the button
 const topContainer = document.querySelector(".top-container");
@@ -9,20 +10,37 @@ const addBookButton = document.createElement("button");
 addBookButton.innerText = "add a book";
 topContainer.appendChild(addBookButton);
 
-modalClose.addEventListener("click", () => {
-  dataForm.style.display = "none";
-  topContainer.appendChild(addBookButton);
-})
 
+
+// replace the button with the form
 addBookButton.addEventListener("click", () => {
   addBookButton.remove();
   dataForm.style.display = "grid";
-  // TODO: Replace the button with the form
-  // when the form is ready 
-  // alert("Button clicked!");
 });
 
-// data-form
+// close the form, show the "add a book" button
+modalCloseButton.addEventListener("click", () => {
+  dataForm.style.display = "none";
+  topContainer.appendChild(addBookButton);
+});
+
+// add form data to myLibrary array
+addButton.addEventListener("click", () => {
+  const author = document.querySelector("#input-author").value;
+  const title = document.querySelector("#input-title").value;
+  const pages = document.querySelector("#input-pages").value;
+  const isRead = document.querySelector("input[name='isRead']:checked")?.value;
+  const comment = document.querySelector("#textarea-comment").value;
+  // console.log(author)
+  // console.log(title)
+  // console.log(pages)
+  // console.log(isRead)
+  // console.log(comment)
+  addBookToLibrary(author, title, pages, isRead, comment);
+
+
+});
+
 
 function Book(author, title, pages, isRead, comment) {
     this.author = author;
