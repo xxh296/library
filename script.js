@@ -1,4 +1,5 @@
 const myLibrary = [];
+const dataTable = document.querySelector(".data-table");
 
 function Book(author, title, pages, isRead, comment) {
     this.author = author;
@@ -39,6 +40,39 @@ Book.prototype.toggleIsReadStatus = function(){
   }
 } 
 
+function populate(){
+  if (myLibrary.length){
+    // the table needs to be repopulated after a change
+    const elementsToRemove = document.querySelectorAll('.data-table div:not(.table-title)');
+    elementsToRemove.forEach(element => {
+      element.remove();
+    });
+    
+    // append myLibrary items to .data-table
+    for (let i = 0; i < myLibrary.length; i++) {
+      let dataPieceDiv0 = document.createElement("div");
+      dataPieceDiv0.textContent = myLibrary[i].author;
+      dataTable.appendChild(dataPieceDiv0);
+
+      let dataPieceDiv1 = document.createElement("div");
+      dataPieceDiv1.textContent = myLibrary[i].title;
+      dataTable.appendChild(dataPieceDiv1);
+
+      let dataPieceDiv2 = document.createElement("div");
+      dataPieceDiv2.textContent = myLibrary[i].pages;
+      dataTable.appendChild(dataPieceDiv2);
+
+      let dataPieceDiv3 = document.createElement("div");
+      dataPieceDiv3.textContent = myLibrary[i].isRead;
+      dataTable.appendChild(dataPieceDiv3);
+
+      let dataPieceDiv4 = document.createElement("div");
+      dataPieceDiv4.textContent = myLibrary[i].comment;
+      dataTable.appendChild(dataPieceDiv4);      
+    }
+  }
+}
+
 // DEBUG
 // console.log("Hello");
 //populate & print
@@ -48,3 +82,4 @@ addBookToLibrary("Author three", "Hello title three", 3300, true, "3 this is a c
 addBookToLibrary("Author four", "Hello title four", 340, false, "4 this is a comment")
 addBookToLibrary("Author five", "Hello title five", 350, true, "5 this is a comment")
 console.log(myLibrary);
+populate();

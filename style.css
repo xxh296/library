@@ -2,7 +2,7 @@
     /* DEBUG */
     /* outline: solid orange; */
     /* background-color: #999; */
-    color: #eee;
+    /* color: #eee; */
 
     margin: 0;
     padding: 0;
@@ -35,7 +35,7 @@
     font-size: 1rem;
     font-weight: 700;
     border: 0;
-    border-radius: 0.5rem;
+    border-radius: 0.5rem;    
 }
 
 .bottom-container {
@@ -50,9 +50,27 @@
 }
 
 .data-table {
+    display: grid;
+    grid-template-columns: 1.5fr 3fr 0.75fr 0.75fr 2fr;
+    column-gap: 1rem;
+    row-gap: 0.75rem;
+
     padding: 1rem;
     background-color: white;
     color: #999;
     border-radius: 0.5rem;
     /* height: calc(100% - 20vh); */
+
+    /* color: #999; */
+}
+
+.table-title {
+    /* font-size: 1.25rem; */
+    font-weight: 700;
+    /* color: #999; */
+}
+
+.data-table div:not(.table-title) {
+    /* DEBUG*/
+    color: red;
 }
