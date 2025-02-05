@@ -1,6 +1,19 @@
 const myLibrary = [];
 const dataTable = document.querySelector(".data-table");
 
+// create and add the button
+const topContainer = document.querySelector(".top-container");
+const addBookButton = document.createElement("button");
+addBookButton.innerText = "add a book";
+topContainer.appendChild(addBookButton);
+
+addBookButton.addEventListener("click", () => {
+  addBookButton.remove();
+  // TODO: Replace the button with the form
+  // when the form is ready 
+  alert("Button clicked!");
+});
+
 function Book(author, title, pages, isRead, comment) {
     this.author = author;
     this.title = title;
@@ -41,7 +54,7 @@ Book.prototype.toggleIsReadStatus = function(){
   } else if (this.isRead){
     this.isRead = false;
   }
-  populate();
+  populate();black
 } 
 
 function populate(){
