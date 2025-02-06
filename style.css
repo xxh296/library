@@ -39,6 +39,7 @@
     border: 0;
     border-radius: 0.5rem;  
     margin: 0.5rem;
+    cursor: pointer;
 }
 
 .bottom-container {
@@ -94,12 +95,12 @@
 
     /* width: 40vw; */
 
-    padding: 1rem 1.5rem;
+    padding: 2rem;
     border-radius: 0.5rem;
 
-    /* display: grid; */
-    display: none;
-    grid-template-rows: 2em 10fr auto;
+    display: grid;
+    /* display: none; */
+    grid-template-rows: 10fr auto;
 }
 
 .data-form > div:first-child {
@@ -119,10 +120,11 @@
 .data-form > form input {
     padding: 0.5rem;
     margin: 0.25rem;
+    /* height: 1rem; */
+    /* border-color: #999; */
     border-radius: 0.5rem;
     border-width: 1px;
     border-style: dotted;
-    /* border-color: #999; */
     /* box-shadow: 0.25rem 0.25rem 0.25rem gray; */
 }
 
@@ -130,6 +132,7 @@
     padding: 0.5rem;
     margin: 0.25rem;
     font-size: 1rem;;
+    /* border-color: #999; */
     border-radius: 0.5rem;
     border-style: dotted;
     width: 100%;
@@ -138,6 +141,7 @@
 .data-form > form textarea {
     padding: 0.5rem;
     margin: 0.25rem;
+    /* border-color: #999; */
     border-radius: 0.5rem;
     border-width: 1px;
     border-style: dotted;
@@ -156,6 +160,27 @@ input, input::placeholder {
 }
 
 .data-form > form input[type="radio"] {
-    accent-color: #999; 
+    accent-color: darkorange; 
 }
 
+.data-form > form input:focus,
+.data-form > form textarea:focus {
+    outline: 3px solid darkorange;
+}
+
+.button-and-link {
+    text-align: center; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center;
+}
+
+.button-and-link a {
+    color: darkorange;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.button-and-link a:hover {
+    color: black;
+}

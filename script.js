@@ -1,7 +1,7 @@
 const myLibrary = [];
 const dataTable = document.querySelector(".data-table");
 const dataForm = document.querySelector(".data-form");
-const modalCloseButton = document.querySelector("#modal-close");
+const closeLink = document.querySelector("#close-link");
 const addButton = document.querySelector("#addButton");
 
 // create and add the button
@@ -19,7 +19,7 @@ addBookButton.addEventListener("click", () => {
 });
 
 // close the form, show the "add a book" button
-modalCloseButton.addEventListener("click", () => {
+closeLink.addEventListener("click", () => {
   dataForm.style.display = "none";
   topContainer.appendChild(addBookButton);
 });
