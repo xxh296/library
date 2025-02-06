@@ -56,7 +56,7 @@ function Book(author, title, pages, isRead, comment) {
 function addBookToLibrary(author, title, pages, isRead, comment) {
   const book = new Book(author, title, pages, isRead, comment);
   myLibrary.push(book);
-  // errorMessage.style.display = "none";
+
   populate();
 }
 
@@ -64,6 +64,14 @@ function removeBookFromLibrary(bookNum){
     const indexToRemove = myLibrary.findIndex(i => i.bookId === bookNum);
     if (indexToRemove !== -1){
       myLibrary.splice(indexToRemove, 1);
+    }
+
+    // if library is empty, remove any remaining boods from UI
+    if (!myLibrary.length){
+      const elementsToRemove = document.querySelectorAll('.data-table div:not(.table-title)');
+      elementsToRemove.forEach(element => {
+        element.remove();
+      });
     }
 
     populate();
@@ -78,6 +86,14 @@ Book.prototype.toggleIsReadStatus = function(){
   populate();
 } 
 
+
+function regenerateBookId(){
+  // old book Id's need to be updated when an object is removed
+  for (let i = 0; i < myLibrary.length; i++) {
+    myLibrary[i].bookId = i + 1; 
+  }
+}
+
 function populate(){
   if (myLibrary.length){
     // the table needs to be repopulated after a change
@@ -85,6 +101,8 @@ function populate(){
     elementsToRemove.forEach(element => {
       element.remove();
     });
+
+    regenerateBookId();
 
     for (let i = 0; i < myLibrary.length; i++) {
       const dataPieces = [
