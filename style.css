@@ -48,7 +48,7 @@
 }
 
 .bottom-container a:hover {
-    color: black;
+    color: #666666;
     text-decoration: none;
 }
 
@@ -59,8 +59,8 @@
     row-gap: 0.75rem;
 
     padding: 1rem;
-    background-color: white;
-    color: #999;
+    background-color: #eee;
+    color: #666666;
     border-radius: 0.5rem;
 }
 
@@ -70,8 +70,8 @@
 }
 
 .data-form {
-    background-color: white;
-    color: #999;
+    background-color: #eee;
+    color: #666666;
     padding: 2rem;
     border-radius: 0.5rem;
     display: none;
@@ -113,12 +113,12 @@
     border-width: 1px;
     border-style: dotted;
     font-size: 1rem;
-    color: #999;
+    color: #666666;
     width: 100%
 }
 
 input, input::placeholder {
-    color: #999;
+    color: #666666;
     font-size: 1rem;
 }
 
@@ -149,5 +149,14 @@ input, input::placeholder {
 }
 
 .button-and-link a:hover {
-    color: black;
+    color: #666666;
+}
+
+.error-message {
+    display: none;
+    border: 1px darkorange dotted;
+    padding: 1rem;
+    margin-top: 1rem;
+    color: red;
+    /* display: block; */
 }

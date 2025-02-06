@@ -16,17 +16,17 @@
             <div class="data-form">
                 <form id="data-inputs">
                     <div>
-                        <input type="text" name="author" id="input-author" placeholder="Author">
+                        <input type="text" name="author" id="input-author" placeholder="Author *">
                     </div>
                     <div>
-                        <input type="text" name="title" id="input-title" placeholder="Book title">
+                        <input type="text" name="title" id="input-title" placeholder="Book title *">
                     </div>
                     <div>
-                        <input type="number" name="pages" id="input-pages" placeholder="Number of pages">
+                        <input type="number" name="pages" id="input-pages" placeholder="Number of pages *">
                     </div>
                     <div>
                         <fieldset>
-                            <legend>Have you read this book?</legend>
+                            <legend>Have you read this book? *</legend>
                                 <div>
                                     <input type="radio" name="isRead" value="true" id="radio-yes">
                                     <label for="radio-yes">Yes</label>
@@ -43,7 +43,8 @@
                 </form>
                 <div class="button-and-link">
                     <button id="addButton">add</button>
-                    <p id="close-link"><a href="javascript:void(0)">close</a></p>                    
+                    <p id="close-link"><a href="javascript:void(0)">close</a></p>
+                    <p class="error-message">Please fill out all required (*) fields.</p>                    
                 </div>
             </div>
         </div>

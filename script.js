@@ -3,6 +3,7 @@ const dataTable = document.querySelector(".data-table");
 const dataForm = document.querySelector(".data-form");
 const closeLink = document.querySelector("#close-link");
 const addButton = document.querySelector("#addButton");
+const errorMessage = document.querySelector(".error-message");
 
 // create and add the button
 const topContainer = document.querySelector(".top-container");
@@ -18,7 +19,8 @@ addBookButton.addEventListener("click", () => {
 
 // close the form, show the "add a book" button
 closeLink.addEventListener("click", () => {
-  dataForm.style.display = "none";
+  errorMessage.style.display = "none";
+  dataForm.style.display = "none";  
   topContainer.appendChild(addBookButton);
 });
 
@@ -30,13 +32,15 @@ addButton.addEventListener("click", () => {
   const isRead = document.querySelector("input[name='isRead']:checked")?.value;
   const comment = document.querySelector("#textarea-comment").value;
 
-  if (!author||!title||!pages||!isRead){
+  if (!author||!title||!pages||!isRead){    
+    errorMessage.style.display = "block";
     return "Please fill out all required (*) fields."
   }
   
   addBookToLibrary(author, title, pages, isRead, comment);
   
   document.querySelector("#data-inputs").reset();
+  errorMessage.style.display = "none";
 });
 
 
@@ -52,6 +56,7 @@ function Book(author, title, pages, isRead, comment) {
 function addBookToLibrary(author, title, pages, isRead, comment) {
   const book = new Book(author, title, pages, isRead, comment);
   myLibrary.push(book);
+  // errorMessage.style.display = "none";
   populate();
 }
 
