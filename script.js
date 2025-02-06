@@ -78,7 +78,7 @@ Book.prototype.toggleIsReadStatus = function(){
   } else if (this.isRead){
     this.isRead = false;
   }
-  populate();black
+  populate();
 } 
 
 function populate(){
@@ -113,6 +113,25 @@ function populate(){
     //   dataTable.appendChild(dataPieceDiv4);      
     // }
 
+    // for (let i = 0; i < myLibrary.length; i++) {
+    //   const dataPieces = [
+    //     i + 1 + ".",
+    //     myLibrary[i].author,
+    //     myLibrary[i].title,
+    //     myLibrary[i].pages,
+    //     myLibrary[i].isRead,
+    //     myLibrary[i].comment
+    //   ];
+    
+    //   // Loop through the data pieces and create the divs dynamically
+    //   dataPieces.forEach((dataPiece) => {
+    //     const dataPieceDiv = document.createElement("div");
+    //     dataPieceDiv.textContent = dataPiece;
+    //     dataTable.appendChild(dataPieceDiv);
+    //   });
+    // }
+
+
     for (let i = 0; i < myLibrary.length; i++) {
       const dataPieces = [
         i + 1 + ".",
@@ -123,13 +142,28 @@ function populate(){
         myLibrary[i].comment
       ];
     
-      // Loop through the data pieces and create the divs dynamically
-      dataPieces.forEach((dataPiece) => {
+      // loop through the data pieces 
+      // and create the divs dynamically
+      dataPieces.forEach((dataPiece, j) => {
         const dataPieceDiv = document.createElement("div");
-        dataPieceDiv.textContent = dataPiece;
-        dataTable.appendChild(dataPieceDiv);
+    
+        // check if the current data piece is `isRead` 
+        // and create a clickable link
+        if (j === 4) { 
+          const link = document.createElement("a");
+          link.href = "javascript:void(0)"; // Prevent link navigation
+          link.textContent = dataPiece; 
+          link.onclick = function() {
+            myLibrary[i].toggleIsReadStatus(); 
+          };
+          dataPieceDiv.appendChild(link); 
+        } else {
+          dataPieceDiv.textContent = dataPiece; 
+        }
+    
+        dataTable.appendChild(dataPieceDiv); 
       });
-    }
+    }    
   }
 }
 
