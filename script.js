@@ -72,6 +72,9 @@ function removeBookFromLibrary(bookNum){
 
 }
 
+// Book.prototype.removeBookFromLibrary = function(){
+// }
+
 Book.prototype.toggleIsReadStatus = function(){
   if (!this.isRead){
     this.isRead = true;
@@ -139,7 +142,8 @@ function populate(){
         myLibrary[i].title,
         myLibrary[i].pages,
         myLibrary[i].isRead,
-        myLibrary[i].comment
+        myLibrary[i].comment,
+        "remove"
       ];
     
       // loop through the data pieces 
@@ -149,13 +153,20 @@ function populate(){
     
         // check if the current data piece is `isRead` 
         // and create a clickable link
-        if (j === 4) { 
+        if (j === 4 || j === 6) { 
           const link = document.createElement("a");
           link.href = "javascript:void(0)"; // Prevent link navigation
           link.textContent = dataPiece; 
-          link.onclick = function() {
+          if (j === 4){
+            link.onclick = function() {
             myLibrary[i].toggleIsReadStatus(); 
-          };
+            };
+          } else {
+            link.onclick = function() {
+              removeBookFromLibrary(i + 1);
+            }
+          }
+
           dataPieceDiv.appendChild(link); 
         } else {
           dataPieceDiv.textContent = dataPiece; 

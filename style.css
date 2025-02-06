@@ -51,7 +51,7 @@
 
 .data-table {
     display: grid;
-    grid-template-columns: 0.25fr 1.5fr 3fr 0.75fr 0.75fr 2fr;
+    grid-template-columns: 0.5fr 1.5fr 3fr 0.75fr 0.5fr 2fr 0.5fr;
     column-gap: 1rem;
     row-gap: 0.75rem;
 
