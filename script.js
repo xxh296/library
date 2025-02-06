@@ -29,6 +29,10 @@ addButton.addEventListener("click", () => {
   const pages = document.querySelector("#input-pages").value;
   const isRead = document.querySelector("input[name='isRead']:checked")?.value;
   const comment = document.querySelector("#textarea-comment").value;
+
+  if (!author||!title||!pages||!isRead){
+    return "Please fill out all required (*) fields."
+  }
   
   addBookToLibrary(author, title, pages, isRead, comment);
   
